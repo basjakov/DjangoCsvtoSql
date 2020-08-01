@@ -1,11 +1,10 @@
 #from django.shortcuts import render
 from django.shortcuts import render
-from django.contrib.auth.models import User
 
 from .forms import mycsvForm
 from .models import mycsv
-from product.models import product
 import csv
+from product.models import product
 # Create your views here.
 def upload_file_view(request):
  
@@ -23,12 +22,12 @@ def upload_file_view(request):
                 else:
                     row = "".join(row)
                     row = row.split(";")
-                    product = row[1]
                     print(row)
                     product.objects.create(
-                         product = product,
-                         count = int(row[2]),
-                         productowner = row[3],
+                           product = row[1],
+                           productowner = row[3],
+                           count = int(row[2]),
+                           price = int(row[4]),
                      )
             obj.activated == True
             obj.save()
