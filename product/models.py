@@ -11,8 +11,8 @@ PRODUCT_CHOICES = (
 class product(models.Model):
     product = models.CharField(max_length=11,choices=PRODUCT_CHOICES)
     productowner = models.CharField(max_length=13)
-    count = models.PositiveIntegerField()
-    price = models.IntegerField()
+    count = models.CharField(max_length=13)
+    price = models.CharField(max_length=13)
     updated = models.DateField(auto_now=True)
     created= models.DateField(auto_now_add=True)
 

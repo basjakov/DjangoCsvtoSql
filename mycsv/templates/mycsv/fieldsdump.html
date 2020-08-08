@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title%}
+  Fields dump
+{%endblock title%}
+
+{%block content%}
+  
+  
+    <form action="/setfield/confirm/" method="POST" class="ui form" enctype="multipart/form-data">
+      {% csrf_token %}
+      <p>input-ներում գրեք,թե որ գրված csv field-ը որ database-ի table գնա։</p>
+      <label>{{ fields.1 }}</label>
+      <input type="text" name="product" value="product"></br>
+      <label>{{ fields.3 }}</label>
+      <input type="text" name="productowner" value="productowner"></br>
+      <label>{{ fields.2 }}</label>
+      <input type="text" name="count" value="count"></br>
+      <label>{{ fields.4 }}</label>
+      <input type="text" name="price" value="price"></br>
+      <input type="submit" class="ui button primary">
+    </form>  
+{%endblock content%}
